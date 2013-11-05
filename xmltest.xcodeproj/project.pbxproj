@@ -19,6 +19,8 @@
 		3BA5602718289C8200860E5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA5600F18289C8200860E5A /* UIKit.framework */; };
 		3BA5602F18289C8200860E5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BA5602D18289C8200860E5A /* InfoPlist.strings */; };
 		3BA5603118289C8200860E5A /* xmltestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5603018289C8200860E5A /* xmltestTests.m */; };
+		3BA5603C18289E3500860E5A /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5603B18289E3500860E5A /* Parser.m */; };
+		3BA5603E18289ECB00860E5A /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BA5603D18289ECB00860E5A /* data.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		3BA5602C18289C8200860E5A /* xmltestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "xmltestTests-Info.plist"; sourceTree = "<group>"; };
 		3BA5602E18289C8200860E5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3BA5603018289C8200860E5A /* xmltestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xmltestTests.m; sourceTree = "<group>"; };
+		3BA5603A18289E3500860E5A /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		3BA5603B18289E3500860E5A /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		3BA5603D18289ECB00860E5A /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,9 @@
 				3BA5601B18289C8200860E5A /* xmltestAppDelegate.m */,
 				3BA5601D18289C8200860E5A /* Images.xcassets */,
 				3BA5601218289C8200860E5A /* Supporting Files */,
+				3BA5603A18289E3500860E5A /* Parser.h */,
+				3BA5603B18289E3500860E5A /* Parser.m */,
+				3BA5603D18289ECB00860E5A /* data.xml */,
 			);
 			path = xmltest;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA5603E18289ECB00860E5A /* data.xml in Resources */,
 				3BA5601618289C8200860E5A /* InfoPlist.strings in Resources */,
 				3BA5601E18289C8200860E5A /* Images.xcassets in Resources */,
 			);
@@ -241,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA5601C18289C8200860E5A /* xmltestAppDelegate.m in Sources */,
+				3BA5603C18289E3500860E5A /* Parser.m in Sources */,
 				3BA5601818289C8200860E5A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
