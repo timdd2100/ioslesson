@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B105FDA182A21C500FAFB9D /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B105FD9182A21C500FAFB9D /* PeopleViewController.m */; };
 		3BBA93821829EBBB002CD666 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA93811829EBBB002CD666 /* Foundation.framework */; };
 		3BBA93841829EBBB002CD666 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA93831829EBBB002CD666 /* CoreGraphics.framework */; };
 		3BBA93861829EBBB002CD666 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA93851829EBBB002CD666 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B105FD8182A21C500FAFB9D /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
+		3B105FD9182A21C500FAFB9D /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
 		3BBA937E1829EBBB002CD666 /* PocketTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBA93811829EBBB002CD666 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BBA93831829EBBB002CD666 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 				3BBA93981829EBBB002CD666 /* Images.xcassets */,
 				3BBA93951829EBBB002CD666 /* PocketTasks.xcdatamodeld */,
 				3BBA938A1829EBBB002CD666 /* Supporting Files */,
+				3B105FD8182A21C500FAFB9D /* PeopleViewController.h */,
+				3B105FD9182A21C500FAFB9D /* PeopleViewController.m */,
 			);
 			path = PocketTasks;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBA93901829EBBB002CD666 /* main.m in Sources */,
+				3B105FDA182A21C500FAFB9D /* PeopleViewController.m in Sources */,
 				3BBA93941829EBBB002CD666 /* PocketTasksAppDelegate.m in Sources */,
 				3BBA93971829EBBB002CD666 /* PocketTasks.xcdatamodeld in Sources */,
 			);
@@ -370,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PocketTasks/PocketTasks-Prefix.pch";
 				INFOPLIST_FILE = "PocketTasks/PocketTasks-Info.plist";
@@ -383,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PocketTasks/PocketTasks-Prefix.pch";
 				INFOPLIST_FILE = "PocketTasks/PocketTasks-Info.plist";
@@ -452,6 +460,7 @@
 				3BBA93B21829EBBC002CD666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BBA93B31829EBBC002CD666 /* Build configuration list for PBXNativeTarget "PocketTasksTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +469,7 @@
 				3BBA93B51829EBBC002CD666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

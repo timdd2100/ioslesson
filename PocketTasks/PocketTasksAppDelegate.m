@@ -7,6 +7,7 @@
 //
 
 #import "PocketTasksAppDelegate.h"
+#import "PeopleViewController.h"
 
 @implementation PocketTasksAppDelegate
 
@@ -16,10 +17,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    //create some data in db
+    //[self dumpDataToConsole];
+    //--------
+    
+    PeopleViewController *peopleVC =
+    [[PeopleViewController alloc]initwithMangedObjectContext:[self managedObjectContext]];
+    
+    UINavigationController *navCtrl = [[UINavigationController alloc]initWithRootViewController:peopleVC];
+    
+    [peopleVC release];
+    peopleVC = nil;
+    
+    
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self.window addSubview:[navCtrl view]];
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -31,7 +53,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -57,11 +79,11 @@
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
-        } 
+        }
     }
 }
 
@@ -111,7 +133,7 @@
         /*
          Replace this implementation with code to handle the error appropriately.
          
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
          
          Typical reasons for an error here include:
          * The persistent store is not accessible;
@@ -133,7 +155,7 @@
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
+    }
     
     return _persistentStoreCoordinator;
 }
@@ -144,6 +166,62 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - 新增方法
+-(void) createSampleData
+{
+    NSArray *peopleToAdd = [NSArray arrayWithObjects:
+                            [NSArray arrayWithObjects:@"Peter", @"Pan", nil],
+                            [NSArray arrayWithObjects:@"Bob", @"Dylan", nil],
+                            [NSArray arrayWithObjects:@"Weird Al", @"Yankovic", nil],
+                            nil];
+    
+    for (NSArray *names in peopleToAdd)
+    {
+        NSManagedObject *newPerson = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+        [newPerson setValue:[names objectAtIndex:0] forKey:@"firstName"];
+        [newPerson setValue:[names objectAtIndex:1] forKey:@"lastName"];
+        NSLog(@"Creating %@ %@...", [names objectAtIndex:0],[names objectAtIndex:1]);
+    }
+    
+    NSError *error = nil;
+    if (![[self managedObjectContext] save:&error]) {
+        NSLog(@"Error saving the managedObjectContext: %@", error);
+    }
+    else{
+        NSLog(@"managedObjectContext successfully saved!");
+    }
+}
+
+-(void)dumpDataToConsole {
+    //
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Person" inManagedObjectContext:moc]];
+    
+    //
+    [request setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:YES]]];
+    
+    
+    NSError *error = nil;
+    NSArray *people = [moc executeFetchRequest:request error:&error];
+    
+
+    
+    if (error) {
+        NSLog(@"Error fetching the person entities %@", error);
+    }
+    else{
+        for (NSManagedObject *person in people) {
+            NSLog(@"Found %@ %@", [person valueForKey:@"firstName" ] ,[person valueForKey:@"lastName"]);
+
+        }
+    }
+
+    
+    
 }
 
 @end
