@@ -21,6 +21,7 @@
 		3B20123D18306CD600321196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B20121F18306CD500321196 /* UIKit.framework */; };
 		3B20124518306CD600321196 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B20124318306CD600321196 /* InfoPlist.strings */; };
 		3B20124718306CD600321196 /* DemoviewcontrollerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20124618306CD600321196 /* DemoviewcontrollerTests.m */; };
+		3B201252183072EC00321196 /* demo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B201251183072EC00321196 /* demo2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3B20124218306CD600321196 /* DemoviewcontrollerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoviewcontrollerTests-Info.plist"; sourceTree = "<group>"; };
 		3B20124418306CD600321196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B20124618306CD600321196 /* DemoviewcontrollerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoviewcontrollerTests.m; sourceTree = "<group>"; };
+		3B201250183072EC00321196 /* demo2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = demo2ViewController.h; sourceTree = "<group>"; };
+		3B201251183072EC00321196 /* demo2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = demo2ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				3B20123118306CD600321196 /* demoViewController.m */,
 				3B20123318306CD600321196 /* Images.xcassets */,
 				3B20122218306CD600321196 /* Supporting Files */,
+				3B201250183072EC00321196 /* demo2ViewController.h */,
+				3B201251183072EC00321196 /* demo2ViewController.m */,
 			);
 			path = Demoviewcontroller;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				3B20122818306CD600321196 /* main.m in Sources */,
 				3B20122C18306CD600321196 /* demoAppDelegate.m in Sources */,
+				3B201252183072EC00321196 /* demo2ViewController.m in Sources */,
 				3B20123218306CD600321196 /* demoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

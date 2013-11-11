@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "demo2ViewController.h"
 
-@interface demoViewController : UIViewController
+@interface demoViewController : UIViewController <Page2Delegate>
+
+@property (nonatomic,strong) IBOutlet UITextField *textfield1;
+
 
 @end
